@@ -1,55 +1,120 @@
 
-
-
-
-
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.bg {
-  /* The image used */
-  background-image: url("backgraound.png");
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
+body {
+  background-image: url('backgraound.png');
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
+
+margin:0;
 }
+
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 1;
   padding: 0;
   overflow: hidden;
-  background-color: #b3e6ff;
+  background-color: LightGray ;
+  opacity: 0.6;
+  border: 4px solid black;
+  border-style: outset;
 }
 
 li {
   float: left;
-  border-right:1px solid #bbb;
-}
-
-li:last-child {
-  border-right: none;
+  border-right:1px solid black;
 }
 
 li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 13px 16px;
   text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #1121;
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #04AA226D;
+}
+
+
+
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  opacity: 0.6;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: black;
+  opacity: 0.6;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 70px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
