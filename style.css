@@ -73,7 +73,7 @@ li a:hover:not(.active) {
 }
 
 div.gallery {
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
 }
 
 div.gallery:hover {
