@@ -4,42 +4,45 @@
     <meta charset="UTF-8">
    <link rel="stylesheet" href="style.css" >
     <title>DevOps-Israel</title>
-
 </head>
 <body >
 
 
-<b>
-<ul>
+<ul><b>
 <li><a href="index.html">Home Page</a></li>
   <li><a href="https://www.youtube.com/channel/UC-u4shLVuXBed-9Vkmt-ZmA/featured">My Youtube Channel</a></li>
   <li><a href="https://github.com/leibovich2021">My GitHub Page</a></li>
   <li><a href="https://www.linkedin.com/in/denisleibovich/">My Linkedin</a></li>
-  <li style="float:right"><a href="about.html" >About Me</a></li>
-</ul>
-</b>
+  <li style="float:right"><a href="about.html" >About Me</a></li></ul></b>
 
-<center><br><br><br><br><br><br><br><br>
-<br><hr><br><h1> DevOps Project Creating CI/CD Pipeline Using Jenkins and Github and Docker</h1>    <br><br><hr>
-<img src="/pictures/jenkins-ci-cd/jenkins-ci-cd.png" width="370" height="250"></center>
+<center><br><br><br><br><br><br><h1> DevOps Project Creating CI/CD Pipeline Using Jenkins and Github and Docker</h1><br><br>
+<img src="/pictures/jenkins-ci-cd/jenkins-ci-cd.png" width="370" height="250">
     <br>
-    <h1>step 1 </h1>
-    <h2>We open 2 server in AWS<br>
+    <h1>Step 1 - AWS </h1>
+    <h2>We open 2 servers in AWS<br>
     Server Number 1 : Jenkins Master  <br>
-    Server Number 2 : Prod <br> <h2>
-<a href="/pictures/jenkins-ci-cd/console-master-prod.png">
-    <img src="/pictures/jenkins-ci-cd/console-master-prod.png" width="370" height="250">
-  </a>
-            <br>
-            <h1>now we install How to Install Jenkins on Ubuntu 22.04  :
-            <b><a href="https://phoenixnap.com/kb/install-jenkins-ubuntu" target="_blank">This is a link</a></b></h1>
-<hr>
-                <h1>step 2 </h1>
-<h2>go to jenkins to manage jenkins and after this go to Manage nodes and clouds
- and new node  </h2>
-<hr>
-                <h1>step 3 </h1>
-            <h3>go to new item</h3>
-            <hr>
+    Server Number 2 : Prod<h2>
+    <b><h5>**Dont forget open port**</h5></b>
+    <a href="/pictures/jenkins-ci-cd/console-master-prod.png">
+    <img src="/pictures/jenkins-ci-cd/console-master-prod.png" width="370" height="250"></a>
+
+    <hr><h1>Step 2 - install Jenkins </h1>
+
+    <br><h1>now we look How to Install Jenkins on Ubuntu 22.04  :
+    <b><a href="https://phoenixnap.com/kb/install-jenkins-ubuntu" target="_blank">This is a link</a></b></h1>
+    <h3>Dont forghet check   $jenkins version</h3>
+
+
+     <hr><h1>step 3 jenkins -> Configure global securuty ->> Agents -> Random</h1>
+            <a href="/pictures/jenkins-ci-cd/jenkins-Random.png">
+    <img src="/pictures/jenkins-ci-cd/jenkins-Random.png" width="370" height="250"></a>
+
+    <hr><h1>step 4 Manage Jenkins -> Nodes - > New Node  </h1>
+            <h3>Remote root directory in ubutnu is = /home/ubutnu/jenkins</h3>
+<a href="/pictures/jenkins-ci-cd/Jenkins-node.png">
+    <img src="/pictures/jenkins-ci-cd/Jenkins-node.png" width="370" height="250"></a>
+
+
+
 </body>
 </html>
