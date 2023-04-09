@@ -16,31 +16,166 @@
   <li style="float:right"><a href="about.html" >About Me</a></li></ul></b>
 
 <center><br><br><br><br><br><br><h1> DevOps Project Creating CI/CD Pipeline Using Jenkins and Github and Docker</h1><br><br>
-<img src="/pictures/jenkins-ci-cd/jenkins-ci-cd.png" width="370" height="250">
-    <br>
-    <h1>Step 1 - AWS </h1>
-    <h2>We open 2 servers in AWS<br>
-    Server Number 1 : Jenkins Master  <br>
-    Server Number 2 : Prod<h2>
-    <b><h5>**Dont forget open port**</h5></b>
-    <a href="/pictures/jenkins-ci-cd/console-master-prod.png">
-    <img src="/pictures/jenkins-ci-cd/console-master-prod.png" width="370" height="250"></a>
+<img src="/pictures/jenkins-ci-cd/jenkins-ci-cd.png" width="410" height="280">
+    <hr>
+    <h1>Step 1 -Open Server in AWS </h1>
+     <div class="gvol-3">
+    <div class="gvol-4">
 
-    <hr><h1>Step 2 - install Jenkins </h1>
+    <h2>We open 2 servers in AWS
+        This server is Ubuntu 20.4<br>
+        Name of servers: <br><br>
+        Server Number 1 : Jenkins Master  <br>
+        Server Number 2 : Prod<h2>
+    <b><h5>**Dont forget open Port range For All**</h5></b>
+        </div>
+<div class="gvol-4">
+<a href="/pictures/jenkins-ci-cd/console-master-prod.png">
+    <img src="/pictures/jenkins-ci-cd/console-master-prod.png" width="410" height="280"></a>
 
-    <br><h1>now we look How to Install Jenkins on Ubuntu 22.04  :
-    <b><a href="https://phoenixnap.com/kb/install-jenkins-ubuntu" target="_blank">This is a link</a></b></h1>
+        </div>
+    </div>
+<hr>
+
+<h1>Step 2 - Install Jenkins </h1>
+
+              <div class="gvol-3">
+    <div class="gvol-4">
+
+    <br><h1>Now we look How to Install Jenkins on Ubuntu 22.04  :
+<br><br>
+
+
+        <b><a href="https://phoenixnap.com/kb/install-jenkins-ubuntu" target="_blank">This is a link</a></b></h1>
+
+        </div>
+<div class="gvol-4">
     <h3>Dont forghet check   $jenkins version</h3>
+    <a href="/pictures/jenkins-ci-cd/version-jenkins.jpg">
+    <img src="/pictures/jenkins-ci-cd/version-jenkins.jpg" width="410" height="280"></a>
+        </div>
+    </div>
+
+<hr><h1>Step 3 Jenkins - Configure</h1>
+        <div class="gvol-3">
+    <div class="gvol-4">
+<h1> Manage Jenkins
+ -> Configure global securuty ->> Agents -> Random</h1>
+        <h2>In Agents we put a Random</h2>
+        </div>
+<div class="gvol-4">
+<a href="/pictures/jenkins-ci-cd/jenkins-Random.png">
+    <img src="/pictures/jenkins-ci-cd/jenkins-Random.png" width="410" height="280"></a>
 
 
-     <hr><h1>step 3 jenkins -> Configure global securuty ->> Agents -> Random</h1>
-            <a href="/pictures/jenkins-ci-cd/jenkins-Random.png">
-    <img src="/pictures/jenkins-ci-cd/jenkins-Random.png" width="370" height="250"></a>
 
-    <hr><h1>step 4 Manage Jenkins -> Nodes - > New Node  </h1>
-            <h3>Remote root directory in ubutnu is = /home/ubutnu/jenkins</h3>
+        </div>
+    </div>
+
+
+
+
+    <hr><h1>Step 4 </h1>
+<div class="gvol-3">
+    <div class="gvol-4">
+ <h1>Manage Jenkins -> Nodes - > New Node  </h1>
+        <h2>
+           * We Take a Name of Node <br>
+           * Select number of executprs <br>
+           * Select Remote root directory in ubutnu is : /home/ubutnu/jenkins<br><br>
+           * For Launch method Select SSH and Add Credentials<br>
+           * For Host Key Verification Strategy Select Non Verifting<br>
+        </h2>
+        </div>
+<div class="gvol-4">
 <a href="/pictures/jenkins-ci-cd/Jenkins-node.png">
-    <img src="/pictures/jenkins-ci-cd/Jenkins-node.png" width="370" height="250"></a>
+    <img src="/pictures/jenkins-ci-cd/Jenkins-node.png" width="410" height="280"></a>
+        </div>
+    </div>
+    <hr><h1>Step 5</h1>
+ <h1>Now We Build 2 New Item:<br>
+ * git-job<br>
+ * build-website</h1>
+            <div class="gvol-3">
+    <div class="gvol-4">
+<h2>For git-job job</h2>
+<h3>git-job : is connect my github file to my jenkins</h3>
+        <h3>build-website : is connect git-job and docker to build and update website</h3>
+<br>
+        <h3>
+            For git-job job we Select GUTHUB project and add a link of github<br>
+            We Take a Node Name to Restrice where this project run<br>
+            Source Code Select GitHub and ADD URL<br>
+            For Automatic Work we Select GitHub Hook Trigger<br>
+            and for connect 2 job we Select Post-build and name of build-website.
+        </h3>
+        <h2>For build-website job</h2>
+        <h3>For build-website we Selecte Node For Restrice where this procject run<br>
+        We Selecte Build bash and write our Code: <br>
+        $sudo docker rm -f $(sudo docker ps -a -q)<br>
+$sudo docker build /home/ubuntu/jenkins/workspace/git-job -t website<br>
+$sudo docker run -it -p 82:80 -d website</h3>
+        </div>
+<div class="gvol-4">
+<br><br><a href="/pictures/jenkins-ci-cd/Jenkins-git-hub-job.png">
+    <img src="/pictures/jenkins-ci-cd/Jenkins-git-hub-job.png" width="410" height="280"></a><br><br><br>
+    <a href="/pictures/jenkins-ci-cd/Jenkins-build-website-job.png">
+    <img src="/pictures/jenkins-ci-cd/Jenkins-build-website-job.png" width="410" height="280"></a>
+        </div>
+    </div>
+<hr>
+
+<h1>Step 6 GitHub</h1>
+            <div class="gvol-3">
+    <div class="gvol-4">
+<h2>Go to our Github and add 2 File:
+    * index.html<br>
+    * Dockerfile<br>
+    <br>
+</h2>
+        <h3>In index.html we write what we want to see in website and In Dockerfile to container build for httpd </h3>
+        <h3>For DownLoad This file put </h3>
+        <b><a href="zip/2-github-fiile.zip">Here</a></b></h1>
+
+        </div>
+<div class="gvol-4">
+<a href="/pictures/jenkins-ci-cd/Screenshot-of-github.png">
+    <img src="/pictures/jenkins-ci-cd/Screenshot-of-github.png" width="410" height="280"></a>
+        </div>
+    </div>
+    <hr>
+
+<h1>Step 6</h1>
+            <div class="gvol-3">
+    <div class="gvol-4">
+<h2> Into Project Job git-job<br>
+We Start Build Now<br>
+    We put in node to Remote root directory <br>
+    and connect to GitHUb<br></h2><br><br><br><br><br><br>
+    <h2>Now This take a file and copy to us Remote directory in Select Server<br>
+    Now we go to us new server (prod) and check if i have this file<br></h2>
+
+
+
+        </div>
+<div class="gvol-4">
+<a href="/pictures/jenkins-ci-cd/consol-git-job.png">
+    <img src="/pictures/jenkins-ci-cd/consol-git-job.png" width="410" height="280"></a>
+
+    <a href="/pictures/jenkins-ci-cd/file-prod-server.png">
+    <img src="/pictures/jenkins-ci-cd/file-prod-server.png" width="410" height="280"></a>
+        </div>
+    </div>
+
+
+            <div class="gvol-3">
+    <div class="gvol-4">
+
+        </div>
+<div class="gvol-4">
+
+        </div>
+    </div>
 
 
 
