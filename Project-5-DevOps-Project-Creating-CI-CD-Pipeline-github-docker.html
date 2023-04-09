@@ -136,16 +136,18 @@ $sudo docker run -it -p 82:80 -d website</h3>
         <h3>In index.html we write what we want to see in website and In Dockerfile to container build for httpd </h3>
         <h3>For DownLoad This file put </h3>
         <b><a href="zip/2-github-fiile.zip">Here</a></b></h1>
-
+<h1>We need update our Webhook in project</h1>
         </div>
 <div class="gvol-4">
 <a href="/pictures/jenkins-ci-cd/Screenshot-of-github.png">
     <img src="/pictures/jenkins-ci-cd/Screenshot-of-github.png" width="410" height="280"></a>
+    <a href="/pictures/jenkins-ci-cd/webhook.png">
+    <img src="/pictures/jenkins-ci-cd/webhook.png" width="410" height="280"></a>
         </div>
     </div>
     <hr>
 
-<h1>Step 6</h1>
+<h1>Step 7 Console file </h1>
             <div class="gvol-3">
     <div class="gvol-4">
 <h2> Into Project Job git-job<br>
@@ -165,18 +167,40 @@ We Start Build Now<br>
     <a href="/pictures/jenkins-ci-cd/file-prod-server.png">
     <img src="/pictures/jenkins-ci-cd/file-prod-server.png" width="410" height="280"></a>
         </div>
+    </div><hr>
+<h1>Step 8 buils-website </h1>
+
+           <div class="gvol-3">
+    <div class="gvol-4">
+<h2>Now we build a project number two<br>
+</h2>
+        <h3>We wirte this command:
+        <br>$sudo docker rm -f $(sudo docker ps -a -q)
+<br>$sudo docker build /home/ubuntu/jenkins/workspace/git-job -t website
+<br>$sudo docker run -it -p 82:80 -d website<br>
+
+        </h3>
+        <h2>We can put any port. like 1234 and when we press to build<br>this take docker file and build project</h2>
+<h2>We take ip server of prod server and new port 1234 and enter into</h2>        </div>
+<div class="gvol-4"><br><br><br>
+<a href="/pictures/jenkins-ci-cd/Screenshot-new-server.png">
+    <img src="/pictures/jenkins-ci-cd/Screenshot-new-server.png" width="410" height="280"></a>
+        </div>
     </div>
-
-
+<hr>
+    <h1>Step 9 Update file</h1>
             <div class="gvol-3">
     <div class="gvol-4">
-
+<h1>Now we update our file in Github and website update automatic<br>
+I change a date to 10.4.23</h1>
         </div>
 <div class="gvol-4">
-
+<a href="/pictures/jenkins-ci-cd/finle.png">
+    <img src="/pictures/jenkins-ci-cd/finle.png" width="410" height="280"></a>
         </div>
     </div>
-
+<hr>
+    <h1>Thank You</h1>
 
 
 </body>
