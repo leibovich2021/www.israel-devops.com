@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css" >
+    <title>DevOps-Israel</title>
+
+</head>
+<body >
+
+
+<b>
+<ul>
+<li><a href="index.html">Home Page</a></li>
+  <li><a href="https://www.youtube.com/channel/UC-u4shLVuXBed-9Vkmt-ZmA/featured">My Youtube Channel</a></li>
+  <li><a href="https://github.com/leibovich2021">My GitHub Page</a></li>
+  <li><a href="https://www.linkedin.com/in/denisleibovich/">My Linkedin</a></li>
+  <li style="float:right"><a href="about.html" >About Me</a></li>
+</ul>
+</b>
+
+
+
+
+
+<center><br><br><br><br><br><br><h1>Simple guide on how to upload your website to Docker</h1><br><br>
+<img src="/pictures/Project-6-Install-Apache-in-Docker/install-Apache-in-Docker.png" width="410" height="280">
+    <hr>
+    <h1>Step 1 :  Create 2 file</h1>
+     <div class="gvol-3">
+    <div class="gvol-4">
+        <h3>Open New Dir</h3>
+<h1>We Create 2 file<br><br>
+index.html : This is my site, The site can be designed as needed  <br ><br >Dockerfile : Here I actually write the settings that I want to be implemented</h1>
+        </div>
+<div class="gvol-4"><br><br>
+<a href="/pictures/Project-6-Install-Apache-in-Docker/index-create.png">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/index-create.png" width="410" height="280"></a>
+<a href="/pictures/Project-6-Install-Apache-in-Docker/docker-create.png">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/docker-create.png" width="410" height="280"></a>
+
+        </div>
+    </div>
+<hr>
+    <h1>Step 2 :  Build file</h1>
+
+     <div class="gvol-3">
+    <div class="gvol-4">
+<h1>Build a image</h1><br>
+<h1>$docker build -t [image-name] .</h1>
+        </div>
+<div class="gvol-4">
+<a href="/pictures/Project-6-Install-Apache-in-Docker/build-image.jpg">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/build-image.jpg" width="410" height="280"></a>
+
+        </div>
+    </div>
+<hr>
+    <h1>Step 3 : run image </h1>
+     <div class="gvol-3">
+    <div class="gvol-4">
+<h1>run a images</h1><br>
+<h1>
+$docker run -d --name [container-name] -p 80:[host-port] httpd</h1><h1>$docker run -p 4444:80 my-web-site:latest<br>
+    in port i can take any number</h1><h1>Now i go my browser and put this assress <br> http://localhost:4444/</h1>
+        </div>
+<div class="gvol-4">
+<a href="/pictures/Project-6-Install-Apache-in-Docker/run-image.png">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/run-image.png" width="410" height="280"></a>
+<a href="/pictures/Project-6-Install-Apache-in-Docker/webpage.jpg">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/webpage.jpg" width="410" height="280"></a>
+
+        </div>
+    </div>
+<hr>
+
+    <h1>Step 4 : Upload to Docker hub </h1>
+     <div class="gvol-3">
+    <div class="gvol-4">
+<h1>Now i Uplaod my file to dockerhub<br>$docker login
+</h1>
+        <h1>Go Docker site: https://hub.docker.com/<br>
+     and Create repository  <br>
+        Change a tag<br>
+        $docker tag my-web-site:latest leibovich2021/my-web-page:latest</h1>
+    </div>
+<div class="gvol-4">
+<a href="/pictures/Project-6-Install-Apache-in-Docker/DockerHub.png">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/DockerHub.png" width="410" height="280"></a>
+<a href="/pictures/Project-6-Install-Apache-in-Docker/file-inDocker-Hub.png">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/file-inDocker-Hub.png" width="410" height="280"></a>
+      </div>
+    </div>
+<hr>
+
+    <h1>Step 5: Open Server in AWS And pull a webpage </h1>
+     <div class="gvol-3">
+    <div class="gvol-4">
+<h1>I pull a Docker file
+    <br>
+        $docker run -it -p [port]:80 [name image]
+<br>
+    $docker run -it -p 9999:80 leibovich2021/my-web-page
+</h1>
+        <h1>Go Docker site: https://hub.docker.com/<br>
+     and Create repository  <br>
+        Change a tag<br>
+        $docker tag my-web-site:latest leibovich2021/my-web-page:latest</h1>
+    </div>
+<div class="gvol-4">
+<a href="/pictures/Project-6-Install-Apache-in-Docker/finel-web.jpg">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/finel-web.jpg" width="410" height="280"></a>
+<a href="/pictures/Project-6-Install-Apache-in-Docker/finel-docker.png">
+    <img src="/pictures/Project-6-Install-Apache-in-Docker/finel-docker.png" width="410" height="280"></a>
+
+        </div>
+    </div>
+</body>
+</html>
